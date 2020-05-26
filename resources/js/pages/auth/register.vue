@@ -164,9 +164,9 @@ export default {
         }
     },
 
-    created() {
-        this.$store.dispatch("users/retrieveUsers");
-    },
+    // created() {
+    //     this.$store.dispatch("users/retrieveUsers");
+    // },
 
     methods: {
         async register() {
