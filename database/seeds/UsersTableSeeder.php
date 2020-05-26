@@ -14,36 +14,12 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'name' => 'Nils Landrodie',
-                'email' => 'nilsland31@gmail.com',
+                'name' => 'admin',
+                'email' => 'admin@gmail.com',
                 'password' => Hash::make('password'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            /*[
-                'name' => 'Mattéo Popoff',
-                'email' => 'pmatteo98@gmail.com',
-                'password' => Hash::make('password')
-            ],*/
-            [
-                'name' => 'Cloé Quirin',
-                'email' => 'cloequirin3@gmail.com',
-                'password' => Hash::make('password'),
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'name' => 'Léa Rostoker',
-                'email' => 'lea.rostoker.12@gmail.com',
-                'password' => Hash::make('password'),
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            /*[
-                'name' => 'Vincent Scavinner',
-                'email' => 'vscavinner@gmail.com',
-                'password' => Hash::make('password')
-            ]*/
+            ]
         ]);
     }
 }
