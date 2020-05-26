@@ -14,29 +14,12 @@
                         class="login-form"
                     >
                         <div class="row">
-                            <div class="col-12">
-                                <div class="form-group position-relative">
-                                    <label
-                                        >{{ $t("image") }}
-                                        <span class="text-danger"
-                                            >*</span
-                                        ></label
-                                    >
-                                    <input
-                                        @change="imageChanged"
-                                        :class="{
-                                            'is-invalid': form.errors.has(
-                                                'image'
-                                            )
-                                        }"
-                                        class="form-control"
-                                        type="file"
-                                        name="image"
-                                        required=""
-                                    />
-                                    <has-error :form="form" field="image" />
-                                </div>
-                            </div>
+                            <dropzone
+                                height="500"
+                                width="500"
+                                accept="image/jpeg,image/png"
+                                @change="imageChanged"
+                            />
 
                             <div class="col-12">
                                 <div class="form-group position-relative">
@@ -126,7 +109,8 @@
                                 v-if="
                                     form.title != '' &&
                                         form.description != '' &&
-                                        form.category != ''
+                                        form.category != '' &&
+                                        image != ''
                                 "
                                 class="col-12 mb-0"
                             >
@@ -137,7 +121,7 @@
                                     {{ $t("upload") }}
                                 </v-button>
                             </div>
-                            <div v-else class="col-12 mb-0">
+                            <div v-else class="col-12 mb-0 text-center">
                                 <p>{{ $t("form_rule") }}</p>
                             </div>
                         </div>
@@ -160,7 +144,8 @@ export default {
             title: "",
             description: "",
             category: ""
-        })
+        }),
+        image: ''
     }),
 
     created() {
@@ -178,12 +163,13 @@ export default {
         getAllCategories() {
             return this.$store.getters["categories/allCategories"];
         },
-        imageChanged(e) {
-            let fileReader = new FileReader();
-            fileReader.readAsDataURL(e.target.files[0]);
-            fileReader.onload = e => {
-                this.form.image = e.target.result;
-            };
+        imageChanged(image) {
+            if (image) {
+                this.image = image;
+                this.form.image = image;
+            } else {
+                console.log("FileReader API not supported.");
+            }
         },
         async addProject() {
             await this.$store.dispatch("projects/addProject", {

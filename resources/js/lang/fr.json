@@ -51,6 +51,7 @@
   "author": "Auteur",
   "title": "Titre",
   "create": "Créer",
+  "drag": "Déposez votre image",
   "form_rule": "Vous pourrez soumettre votre projet une fois chacun des champs remplis.",
   "create_by": "Créé par",
   "no_projects": "Pas de projets à afficher.",

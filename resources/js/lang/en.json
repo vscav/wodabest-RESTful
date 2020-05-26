@@ -51,6 +51,7 @@
   "author": "Author",
   "title": "Title",
   "create": "Create",
+  "drag": "Drag and drop your image here",
   "form_rule": "You can submit your project once each of the fields is completed.",
   "create_by": "Create by",
   "no_projects": "No projects to display.",

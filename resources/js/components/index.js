@@ -8,6 +8,7 @@ import Button from "./Button";
 import Checkbox from "./Checkbox";
 import CreateForm from "./CreateForm";
 import Details from "./Details";
+import Dropzone from './Dropzone';
 import Filter from "./Filter";
 import Footer from "./Footer";
 import GamePlayer from "./GamePlayer";
@@ -33,6 +34,7 @@ import { HasError, AlertError, AlertSuccess } from "vform";
   Checkbox,
   CreateForm,
   Details,
+  Dropzone,
   Filter,
   Footer,
   GamePlayer,
