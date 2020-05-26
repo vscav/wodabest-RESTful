@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g transform="matrix(1,0,0,1,-230.004,-2.84217e-14)">
+        <g id="vue-router" transform="matrix(1.03392,0,0,1.03392,-221.557,-109.241)">
+            <rect x="436.745" y="105.657" width="193.438" height="193.438" style="fill:none;"/>
+            <g>
+                <g transform="matrix(0.96719,0,0,0.96719,214.287,105.657)">
+                    <path d="M374.703,72.841L401.319,72.841L402.149,82.597L400.831,96.36C380.787,98.787 361.625,118.657 354.968,146.093C354.391,148.47 353.875,150.837 353.514,153.19L330.004,154.629L306.509,153.328C306.135,150.864 305.515,148.398 304.904,145.908C298.213,118.629 279.124,98.892 259.102,96.385L260.236,72.841L285.172,72.841C289.207,101.095 307.844,122.47 330.012,122.47C352.18,122.47 370.668,101.095 374.703,72.841Z" style="fill:rgb(139,139,139);"/>
+                </g>
+                <g transform="matrix(0.977585,0,0,0.977585,214.648,100.548)">
+                    <circle cx="326.126" cy="53.878" r="23.414" style="fill:rgb(71,71,71);"/>
+                </g>
+                <g transform="matrix(0.977585,0,0,0.977585,148.398,123.437)">
+                    <circle cx="326.126" cy="53.878" r="23.414" style="fill:rgb(139,139,139);"/>
+                </g>
+                <g transform="matrix(0.977585,0,0,0.977585,280.784,123.437)">
+                    <circle cx="326.126" cy="53.878" r="23.414" style="fill:rgb(139,139,139);"/>
+                </g>
+                <g transform="matrix(0.977585,0,0,0.977585,214.648,198.674)">
+                    <circle cx="326.126" cy="53.878" r="23.414" style="fill:rgb(139,139,139);"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
