@@ -1,7 +1,7 @@
 <template>
   <button v-if="googleAuth" class="btn shadow-large mt-2" type="button" @click="login">
     {{ $t('login_with') }}
-    <img src="img/icons/social/google-icon.svg" />
+    <img src="img/icons/social/google-icon.svg" alt="Google icon" />
   </button>
 </template>
 

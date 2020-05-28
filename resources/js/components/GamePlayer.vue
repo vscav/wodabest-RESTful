@@ -19,6 +19,7 @@
                 <button type="submit" class="game-button">
                     <img
                         :src="'/img/upload/' + filename"
+                        :alt="this.title"
                         class="img-fluid rounded work-image"
                     />
                 </button>

@@ -44,7 +44,7 @@
                         zIndex: zIndex + 2
                     }"
                 >
-                    <img src="/img/icons/upload-primary.svg" />
+                    <img src="/img/icons/upload-primary.svg" alt="Upload icon"/>
                     <span
                         v-if="supportsDragAndDrop"
                         class="picture-inner-text"

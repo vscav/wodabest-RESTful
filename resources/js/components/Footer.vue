@@ -5,7 +5,7 @@
         <div class="col-sm-12">
           <a href="https://www.ingenieur-imac.fr" target="_blank">
             <div class="nav-logo col-12 p-1">
-              <img src="/img/imac-logo.png" />
+              <img src="/img/imac-logo.png" alt="IMAC engineering school logo" />
             </div>
           </a>
         </div>

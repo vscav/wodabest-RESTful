@@ -9,8 +9,8 @@
           >
             <img
               :src="'/img/upload/' + project.filename"
+              :alt="project.description"
               class="img-fluid rounded"
-              alt=""
             />
           </div>
           <details-view v-if="project !== undefined" :project="project"></details-view>

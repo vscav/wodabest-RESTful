@@ -29,7 +29,7 @@
                                         '-logo.svg'
                                 "
                                 style="height: 40px;"
-                                alt=""
+                                :alt="technologie + ' logo'"
                             />
                         </div>
                     </div>

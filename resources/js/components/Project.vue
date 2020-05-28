@@ -5,13 +5,13 @@
         >
             <img
                 :src="'/img/upload/' + project.filename"
+                :alt="project.description"
                 class="img-fluid"
-                alt="work-image"
             />
             <div class="overlay-work bg-dark"></div>
             <div class="icons text-center">
                 <a @click="goTodetail(id)" class="btn btn-icon"
-                    ><img src="img/icons/magnifying-glass.svg"
+                    ><img src="img/icons/magnifying-glass.svg" alt="Magnifying glass icon"
                 /></a>
             </div>
             <div class="content p-3">
@@ -47,17 +47,17 @@
                     @click="removeProject(project.id)"
                     class="d-inline-flex mt-3 text-left"
                 >
-                    <a class="btn btn-icon"><img src="img/icons/trash.svg"/></a>
+                    <a class="btn btn-icon"><img src="img/icons/trash.svg" alt="Trash icon" /></a>
                 </div>
                 <div class="d-inline-flex mt-3 text-left align-items-center">
                     <a
                         v-if="isLiked"
                         @click="unlikeProject"
                         class="btn btn-icon"
-                        ><img src="img/icons/thumb-up-full.svg"
+                        ><img src="img/icons/thumb-up-full.svg" alt="Full thumb up icon"
                     /></a>
                     <a v-else @click="likeProject" class="btn btn-icon"
-                        ><img src="img/icons/thumb-up.svg"
+                        ><img src="img/icons/thumb-up.svg" alt="Thumb up icon"
                     /></a>
                     <span class="text-white small ml-0">{{
                         countProjectLikes

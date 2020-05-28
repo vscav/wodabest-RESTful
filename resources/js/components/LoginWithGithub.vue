@@ -1,7 +1,7 @@
 <template>
   <button v-if="githubAuth" class="btn btn-dark shadow-large mt-2" type="button" @click="login">
     {{ $t('login_with') }}
-    <img src="img/icons/social/github-icon.svg" />
+    <img src="img/icons/social/github-icon.svg" alt="Github icon" />
   </button>
 </template>
 

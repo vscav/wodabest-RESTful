@@ -9,7 +9,7 @@
                 class="feature feature-transition shadow-large p-4 rounded text-left"
             >
                 <div class="icon text-center rounded-circle">
-                    <img :src="'img/icons/' + link + '.svg'" />
+                    <img :src="'img/icons/' + link + '.svg'" :alt="link + ' icon'" />
                 </div>
                 <h5 class="mt-2">{{ $t(link) }}</h5>
                 <p class="text-muted mb-0">
@@ -22,7 +22,7 @@
                         active-class="active"
                     >
                         <a class="btn btn-icon btn-pills btn-outline-primary">
-                            <img src="img/icons/chevron-right.svg" />
+                            <img src="img/icons/chevron-right.svg" alt="Chevron icon" />
                         </a>
                     </router-link>
                 </div>

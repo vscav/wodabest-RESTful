@@ -7,7 +7,7 @@
                     class="navbar-brand"
                 >
                     <div class="nav-logo col-12">
-                        <img src="/img/logo/wodabest-small.png" />
+                        <img src="/img/logo/wodabest-small.png" alt="Wodabest logo" />
                     </div>
                 </router-link>
 
@@ -85,6 +85,7 @@
                             >
                                 <img
                                     :src="user.photo_url"
+                                    :alt="user.name + ' avatar'"
                                     class="rounded-circle profile-photo mr-1"
                                 />
                                 {{ user.name }}

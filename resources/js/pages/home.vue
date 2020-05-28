@@ -11,6 +11,7 @@
                 <img
                   src="/img/upload/behance-design-32.jpg"
                   class="img-fluid"
+                  alt="Front artistic work"
                 />
               </div>
             </div>
@@ -24,6 +25,7 @@
                     <img
                       src="/img/upload/behance-design-28.jpg"
                       class="img-fluid"
+                      alt="Front artistic work"
                     />
                   </div>
                 </div>
@@ -35,6 +37,7 @@
                     <img
                       src="/img/upload/behance-design-23.jpg"
                       class="img-fluid"
+                      alt="Front artistic work"
                     />
                   </div>
                 </div>

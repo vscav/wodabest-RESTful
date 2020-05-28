@@ -10,6 +10,7 @@
                                     <img
                                         class="img-fluid welcome-logo"
                                         src="/img/logo/wodabest.png"
+                                        alt="Wodabest logo"
                                     />
                                 </div>
                                 <h3 class="title mb-4">
