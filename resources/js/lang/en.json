@@ -109,5 +109,15 @@
   "send_verification_link": "Send Verification Link",
   "resend_verification_link": "Resend Verification Link ?",
   "failed_to_verify_email": "Failed to verify email.",
-  "verify_email_address": "We sent you an email with an the verification link."
+  "verify_email_address": "We sent you an email with an the verification link.",
+  "upload_unsupport": "Your device does not support file uploading",
+  "tap": "Tap here to select an image from your gallery",
+  "change": "Change image",
+  "aspect": "Landscape/Portrait",
+  "remove": "Remove image",
+  "select": "Select an image",
+  "selected": "Image successfully selected",
+  "fileSize": "The file size exceeds the limit",
+  "fileType": "This file type is not supported",
+  "browser_issue": "Depending on your browser, the OAuth authentication may not be successful."
 }

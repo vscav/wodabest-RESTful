@@ -51,7 +51,7 @@
   "author": "Auteur",
   "title": "Titre",
   "create": "Créer",
-  "drag": "Déposez votre image",
+  "drag": "Déposez votre image ici",
   "form_rule": "Vous pourrez soumettre votre projet une fois chacun des champs remplis.",
   "create_by": "Créé par",
   "no_projects": "Pas de projets à afficher.",
@@ -109,5 +109,15 @@
   "send_verification_link": "Envoyer le lien de vérification",
   "resend_verification_link": "Renvoyer le lien de vérification ?",
   "failed_to_verify_email": "Impossible de vérifier l'e-mail.",
-  "verify_email_address": "Nous vous avons envoyé un e-mail avec le lien de vérification."
+  "verify_email_address": "Nous vous avons envoyé un e-mail avec le lien de vérification.",
+  "upload_unsupport": "Votre appareil ne supporte pas le téléchargement de fichier",
+  "tap": "Appuyez ici pour sélectionner une photo de votre galerie",
+  "change": "Changer d'image",
+  "aspect": "Paysage/Portrait",
+  "remove": "Supprimer l'image",
+  "select": "Sélectionner une image",
+  "selected": "Image sélectionnée avec succès",
+  "fileSize": "La taille du fichier dépasse la limite autorisée",
+  "fileType": "Ce type de fichier n'est pas supporté",
+  "browser_issue": "Selon votre navigateur, l'authentification OAuth peut éventuellement échouée."
 }

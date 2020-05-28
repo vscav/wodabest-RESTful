@@ -11,6 +11,14 @@
                     </div>
 
                     <div class="col-12 mb-0 text-center">
+                        <p class="mb-0 mt-3">
+                            <small class="text-warning">{{
+                                $t("browser_issue")
+                            }}</small>
+                        </p>
+                    </div>
+
+                    <div class="col-12 mb-0 text-center">
                         <login-with-google />
                         <login-with-github />
                     </div>
@@ -164,7 +172,7 @@ export default {
         async login() {
             // Submit the form.
             const { data } = await this.form.post("/api/login");
-            
+
             // Save the token.
             this.$store.dispatch("auth/saveToken", {
                 token: data.token,
