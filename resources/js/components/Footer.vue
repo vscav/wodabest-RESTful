@@ -3,7 +3,7 @@
     <div class="container text-center">
       <div class="row align-items-center">
         <div class="col-sm-12">
-          <a href="https://www.ingenieur-imac.fr" target="_blank">
+          <a href="https://www.ingenieur-imac.fr" target="_blank" rel="noopener">
             <div class="nav-logo col-12 p-1">
               <img src="/img/imac-logo.png" alt="IMAC engineering school logo" />
             </div>
