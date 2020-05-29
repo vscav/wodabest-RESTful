@@ -1,7 +1,7 @@
 <template>
   <div>
     <page-title
-      :title="$t('ranking')"
+      :title="$t('leaderboard')"
       :text="$t('ranking_introduction')"
     ></page-title>
     <ranked-projects-list></ranked-projects-list>
@@ -13,7 +13,7 @@ export default {
   middleware: "auth",
 
   metaInfo() {
-    return { title: this.$t("ranking") };
+    return { title: this.$t("leaderboard") };
   }
 };
 </script>

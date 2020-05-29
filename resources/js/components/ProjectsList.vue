@@ -6,7 +6,7 @@
 
         <v-filter type="projects" />
 
-        <div v-if="countFilteredProjects == 0" class="mt-4">
+        <div v-if="countFilteredProjects == 0 && !loading" class="mt-4">
             <p>{{ $t("no_projects") }}</p>
         </div>
 
@@ -23,35 +23,57 @@
             </p>
         </div>
 
-        <div class="container">
-            <div class="row projects-wrapper">
-                <project-item
-                    v-for="project in projectsFilteredToShow"
-                    :key="project.id"
-                    :project="project"
-                />
+        <div v-if="loading" class="container text-center mt-5 mb-5">
+            <div class="group">
+                <div class="bigSqr">
+                    <div class="square first"></div>
+                    <div class="square second"></div>
+                    <div class="square third"></div>
+                    <div class="square fourth"></div>
+                </div>
             </div>
         </div>
-        <div
-            @click="loadMore"
-            v-show="countFilteredProjects > countprojectsFilteredToShow"
-            class="col-12 mb-0 text-center mt-5"
-        >
-            <v-button class="btn btn-primary">
-                {{ $t("load_more") }}
-            </v-button>
+
+        <div v-else>
+            <div class="container">
+                <div class="row projects-wrapper">
+                    <project-item
+                        v-for="project in projectsFilteredToShow"
+                        :key="project.id"
+                        :project="project"
+                    />
+                </div>
+            </div>
+            <div
+                @click="loadMore"
+                v-show="countFilteredProjects > countprojectsFilteredToShow"
+                class="col-12 mb-0 text-center mt-5"
+            >
+                <v-button class="btn btn-primary">
+                    {{ $t("load_more") }}
+                </v-button>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import axios from "axios";
+import * as types from "../store/mutation-types";
+
 export default {
     name: "projects-list",
 
+    data: function() {
+        return {
+            loading: true
+        };
+    },
+
     created() {
         this.$store.dispatch("users/retrieveUsers");
-        this.$store.dispatch("projects/retrieveProjects");
         this.$store.dispatch("likes/retrieveLikes");
+        this.retrieveProjects();
     },
 
     computed: {
@@ -73,6 +95,11 @@ export default {
     },
 
     methods: {
+        async retrieveProjects() {
+            const { data } = await axios.get("/api/projects");
+            this.loading = false;
+            this.$store.dispatch("projects/feedProjects", data);
+        },
         loadMore() {
             this.$store.dispatch("projects/updateShow");
         }

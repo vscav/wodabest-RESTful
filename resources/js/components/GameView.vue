@@ -4,6 +4,7 @@
 
         <div class="row justify-content-md-center">
             <game-player
+                v-if="players[0]"
                 :idWinner="players[0].id"
                 :idLoser="players[1].id"
                 :idCategory="players[0].category_id"
@@ -12,6 +13,7 @@
             ></game-player>
 
             <game-player
+                v-if="players[1]"
                 :idWinner="players[1].id"
                 :idLoser="players[0].id"
                 :idCategory="players[1].category_id"

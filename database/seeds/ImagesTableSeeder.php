@@ -13,45 +13,50 @@ class ImagesTableSeeder extends Seeder
      */
     public function run()
     {
-        $path = 'public/img/model';
+        $categories = ['3d', 'design', 'branding', 'drawing', 'painting', 'photography', 'webdesign'];
         $dest = 'public/img/upload/';
-        if(is_dir($path))
+
+        foreach ($categories as $key => $category)
         {
-            $handle = opendir($path);
-            while (($file = readdir($handle)) !== false)
+            $path = 'public/img/model/' . $category;
+            if(is_dir($path))
             {
-                if ($file != '.' && $file != '..' && $file != '.DS_Store')
+                $handle = opendir($path);
+                while (($file = readdir($handle)) !== false)
                 {
-                    $extension = pathinfo($file, PATHINFO_EXTENSION);
-                    $options = [
-                        'jpg',
-                        'JPG',
-                        'jpeg',
-                        'JPEG',
-                        'png',
-                        'PNG'
-                    ];
-
-                    if (in_array($extension, $options))
+                    if ($file != '.' && $file != '..' && $file != '.DS_Store')
                     {
-                         $title = str_slug(basename($file, ".".$extension));
-                         $filename = $file;
+                        $extension = pathinfo($file, PATHINFO_EXTENSION);
+                        $options = [
+                            'jpg',
+                            'JPG',
+                            'jpeg',
+                            'JPEG',
+                            'png',
+                            'PNG'
+                        ];
 
-                         copy($path . '/' . $filename, $dest . $filename);
+                        if (in_array($extension, $options))
+                        {
+                            $title = str_slug(basename($file, ".".$extension));
+                            $filename = $file;
 
-                        DB::table('images')->insert([
-                            'user_id' => 1,
-                            'category_id' => rand(1, 7),
-                            'title' => $title,
-                            'filename' => $filename,
-                            'description' => Str::random(50),
-                            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-                        ]);
+                            copy($path . '/' . $filename, $dest . $filename);
+
+                            DB::table('images')->insert([
+                                'user_id' => 1,
+                                'category_id' => $key+1,
+                                'title' => $title,
+                                'filename' => $filename,
+                                'description' => Str::random(50),
+                                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                            ]);
+                        }
                     }
                 }
+                closedir($handle);
             }
-            closedir($handle);
         }
     }
 }
