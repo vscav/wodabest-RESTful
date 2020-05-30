@@ -130,6 +130,8 @@ Edit `.env` and set `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, `GOOGLE_CLIENT_I
 <img src="doc/api-routes/api-routes-en.png">
 </p>
 
+For more details, see the full documentation in `doc/api-documentation`.
+
 ## License
 
 Distributed under the MIT License.
