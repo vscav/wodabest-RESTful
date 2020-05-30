@@ -1,6 +1,3 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![MIT License][license-shield]][license-url]
-
 <br />
 <p align="center">
   <a href="https://github.com/N0Ls/Wodabest-REST">
@@ -12,11 +9,9 @@
   <p align="center">
     A Tinder like Art Gallery !
     <br />
-    <a href="">View online</a>
+    <a href="https://wodabest.herokuapp.com">View online</a>
   </p>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -24,9 +19,12 @@
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
   * [Features](#features)
+* [Architecture diagram](#architecture-diagram)
 * [Getting Started](#getting-started)
 * [Usage](#usage)
     * [Development](#development)
+    * [Socialite](#socialite)
+    * [API routes](#api-routes)
 * [License](#license)
 * [Contributors](#contributors)
 
@@ -44,9 +42,9 @@ Have you just finished your last creation? Don't wait any longer and bring it in
 ### Built With
 
 Wodabest is built on a set of trendy technologies to provide you with an optimal user experience.
-* [Bootstrap](https://getbootstrap.com)
 * [Laravel](https://laravel.com)
 * [Vue](https://vuejs.org/)
+* [Bootstrap](https://getbootstrap.com)
 
 ### Features
 
@@ -54,6 +52,15 @@ Wodabest is built on a set of trendy technologies to provide you with an optimal
 - Vue + VueRouter + Vuex + VueI18n + ESlint
 - Pages with dynamic import and custom layouts
 - Authentication with JWT
+- Socialite integration
+
+## Architecture diagram
+
+> The following diagram allows you to have an overview of the interactions inside the application.
+
+<p align="center">
+<img src="doc/diagram/app-diagram-git.png">
+</p>
 
 ## Getting Started
 
@@ -107,6 +114,22 @@ On another terminal, run :
 php artisan serve
 ```
 
+### Socialite
+
+This project uses [Laravel Socialite](https://laravel.com/docs/5.8/socialite).
+
+To enable the provider, create new GitHub and Google applications and use `https://example.com/api/oauth/github/callback` and `https://example.com/api/oauth/google/callback` as the Authorization callback URLs.
+
+Edit `.env` and set `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` with the keys from your GitHub and Google applications.
+
+### API routes
+
+> All the active routes of Wodabest API.
+
+<p align="center">
+<img src="doc/api-routes/api-routes-en.png">
+</p>
+
 ## License
 
 Distributed under the MIT License.
@@ -122,8 +145,3 @@ Cloé QUIRIN - Frontend Developer - cloequirin3@gmail.com
 Léa ROSTOKER - Webdesigner - lea.rostoker.12@gmail.com
 
 Vincent SCAVINNER - Frontend Developer - vscavinner@gmail.com
-
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
