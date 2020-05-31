@@ -16,6 +16,7 @@ import GameView from "./GameView";
 import Insert from "./Insert";
 import Introduction from './Introduction';
 import LinkCard from "./LinkCard";
+import Loader from "./Loader";
 import Project from "./Project";
 import ProjectsList from "./ProjectsList";
 import RankedProject from "./RankedProject";
@@ -42,6 +43,7 @@ import { HasError, AlertError, AlertSuccess } from "vform";
   Insert,
   Introduction,
   LinkCard,
+  Loader,
   Project,
   ProjectsList,
   RankedProject,

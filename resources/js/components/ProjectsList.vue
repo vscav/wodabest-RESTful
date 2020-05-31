@@ -10,7 +10,7 @@
             <p>{{ $t("no_projects") }}</p>
         </div>
 
-        <div v-else class="text-center mt-4">
+        <div v-if="!loading" class="text-center mt-4">
             <p class="small text-muted para-desc mx-auto mb-0">
                 {{
                     $t("result") +
@@ -24,14 +24,7 @@
         </div>
 
         <div v-if="loading" class="container text-center mt-5 mb-5">
-            <div class="group">
-                <div class="bigSqr">
-                    <div class="square first"></div>
-                    <div class="square second"></div>
-                    <div class="square third"></div>
-                    <div class="square fourth"></div>
-                </div>
-            </div>
+            <loader />
         </div>
 
         <div v-else>
@@ -59,7 +52,6 @@
 
 <script>
 import axios from "axios";
-import * as types from "../store/mutation-types";
 
 export default {
     name: "projects-list",

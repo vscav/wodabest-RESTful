@@ -30,14 +30,10 @@ export const getters = {
         return state.project;
     },
     randomProjects(state) {
-        const randomProjects = [];
-        for (let i = 0; i < 3; i++)
-            randomProjects.push(
-                state.projects[
-                    Math.floor(Math.random() * state.projects.length)
-                ]
-            );
-        return randomProjects;
+        var res = state.projects.sort(() => {
+            return 0.5 - Math.random();
+        });
+        return res.slice(state.projects, 3);
     },
     projectsFiltered(state, getters, rootState, rootGetters) {
         let projectsFiltered = switchFilter(

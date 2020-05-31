@@ -18,6 +18,9 @@ export const getters = {
     },
     topProjects(state) {
         return state.topProjects;
+    },
+    filter(state) {
+        return state.filter;
     }
 };
 
@@ -54,6 +57,9 @@ export const actions = {
             .catch(error => {
                 console.log(error);
             });
+    },
+    feedTopProjects(context, projects) {
+        context.commit(types.RETRIEVE_TOP_PROJECTS, projects);
     },
     updateFilter(context, filter) {
         context.commit(types.UPDATE_RANKING_FILTER, filter);

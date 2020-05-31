@@ -3,7 +3,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12 order-2 order-lg-1">
-                    <div class="row align-items-center">
+                    <div v-if="loading" class="container text-center mt-5 mb-5">
+                        <loader />
+                    </div>
+                    <div v-else class="row align-items-center">
                         <div
                             class="col-lg-6 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0"
                         >
@@ -73,7 +76,14 @@
                         </p>
 
                         <div class="row justify-content-center" id="counter">
-                            <div class="col-md-4 col-6 mt-4">
+                            <div
+                                v-if="loading"
+                                class="container text-center mt-5 mb-5"
+                            >
+                                <loader />
+                            </div>
+
+                            <div v-if="!loading" class="col-md-4 col-6 mt-4">
                                 <div class="counter-box text-center">
                                     <h3 class="counter-value mt-3">
                                         {{ countUsers }}
@@ -84,7 +94,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4 col-6 mt-4">
+                            <div v-if="!loading" class="col-md-4 col-6 mt-4">
                                 <div class="counter-box text-center">
                                     <h3 class="counter-value mt-3">
                                         {{ countProjects }}
@@ -95,7 +105,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4 col-6 mt-4">
+                            <div v-if="!loading" class="col-md-4 col-6 mt-4">
                                 <div class="counter-box text-center">
                                     <h3 class="counter-value mt-3">
                                         {{ countGames }}
@@ -106,7 +116,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 mb-4 text-center mt-4">
+                        <div v-if="!loading" class="col-12 mb-4 text-center mt-4">
                             <router-link
                                 :to="{ name: 'game' }"
                                 class="navbar-brand"
@@ -124,13 +134,15 @@
 </template>
 
 <script>
+import axios from "axios";
 import { mapGetters } from "vuex";
 
 export default {
     middleware: "auth",
 
     data: () => ({
-        name: window.config.appName
+        name: window.config.appName,
+        loading: true
     }),
 
     computed: {
@@ -155,8 +167,16 @@ export default {
     created() {
         this.$store.dispatch("users/retrieveUsers");
         this.$store.dispatch("categories/retrieveCategories");
-        this.$store.dispatch("projects/retrieveProjects");
         this.$store.dispatch("games/retrieveGames");
+        this.retrieveProjects();
+    },
+
+    methods: {
+        async retrieveProjects() {
+            const { data } = await axios.get("/api/projects");
+            this.loading = false;
+            this.$store.dispatch("projects/feedProjects", data);
+        }
     },
 
     metaInfo() {

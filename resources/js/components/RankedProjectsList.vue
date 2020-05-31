@@ -3,7 +3,10 @@
         <v-filter type="ranking"></v-filter>
         <div class="row mt-4">
             <div class="col">
-                <div class="card shadow-large">
+                <div v-if="loading" class="container text-center mt-5 mb-5">
+                    <loader />
+                </div>
+                <div v-else class="card shadow-large">
                     <div class="table-responsive">
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
@@ -37,12 +40,20 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
     name: "ranked-projects-list",
 
+    data: function() {
+        return {
+            loading: true
+        };
+    },
+
     created() {
         this.$store.dispatch("users/retrieveUsers");
-        this.$store.dispatch("ranking/retrieveTopProjects");
+        this.retrieveTopProjects();
     },
 
     computed: {
@@ -52,8 +63,18 @@ export default {
         topProjects() {
             return this.$store.getters["ranking/topProjects"];
         }
+    },
+
+    methods: {
+        async retrieveTopProjects() {
+            const { data } = await axios.post("/api/projects/ranking/" + this.$store.getters["ranking/filter"]);
+            this.loading = false;
+            this.$store.dispatch("ranking/feedTopProjects", data);
+        },
+        // Utils (simulate slow async)
+        async stall(stallTime = 1000) {
+            await new Promise(resolve => setTimeout(resolve, stallTime));
+        }
     }
 };
 </script>
-
-<style></style>

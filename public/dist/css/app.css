@@ -14040,7 +14040,7 @@ button:not(:disabled) {
   line-height: 16px;
 }
 
-.bigSqr {
+.square-container {
   position: relative;
   display: inline-block;
   width: 40px;
