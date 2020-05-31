@@ -52,7 +52,6 @@ export const actions = {
             });
     },
     like(context, ids) {
-        console.log(ids)
         axios
             .post("/api/likes", { ids })
             .then(response => {

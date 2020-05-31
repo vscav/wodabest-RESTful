@@ -22,7 +22,7 @@
                 }}
             </p>
         </div>
-
+        
         <div v-if="loading" class="container text-center mt-5 mb-5">
             <loader />
         </div>

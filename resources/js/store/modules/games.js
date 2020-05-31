@@ -19,6 +19,9 @@ export const getters = {
     },
     getActivePlayers(state) {
         return state.activePlayers;
+    },
+    filter(state) {
+        return state.filter;
     }
 };
 
@@ -36,6 +39,9 @@ export const mutations = {
     [types.UPDATE_GAMES_FILTER](state, filter) {
         state.filter = filter;
         this.dispatch("games/retrievePlayers");
+    },
+    [types.DEFAULT_PLAYERS](state) {
+        state.activePlayers = null;
     }
 };
 
@@ -84,7 +90,6 @@ export const actions = {
                         }
                     );
                 });
-                context.dispatch("retrievePlayers");
             })
             .catch(error => {
                 console.log(error);
@@ -92,5 +97,11 @@ export const actions = {
     },
     updateFilter(context, filter) {
         context.commit(types.UPDATE_GAMES_FILTER, filter);
+    },
+    feedPlayers(context, players) {
+        context.commit(types.RETRIEVE_PLAYERS, players);
+    },
+    defaultPlayers(context) {
+        context.commit(types.DEFAULT_PLAYERS);
     }
 };

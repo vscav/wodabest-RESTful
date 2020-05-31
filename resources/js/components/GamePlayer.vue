@@ -19,8 +19,8 @@
                 <button type="submit" class="game-button">
                     <img
                         :src="'/img/upload/' + filename"
-                        :alt="this.title"
                         class="img-fluid rounded work-image"
+                        :alt="this.title"
                     />
                 </button>
                 <div class="content d-flex align-items-center pt-3">
@@ -80,6 +80,7 @@ export default {
 
     methods: {
         async update() {
+            this.$emit('game-played');
             await this.$store.dispatch("games/updateScores", {
                 winner: this.form.winner,
                 loser: this.form.loser
