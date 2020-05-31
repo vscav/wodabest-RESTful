@@ -3,6 +3,7 @@
     <page-title
       :title="$t('gallery')"
       :text="$t('gallery_introduction')"
+      :information="$t('green_badge')"
     ></page-title>
     <projects-list></projects-list>
   </div>

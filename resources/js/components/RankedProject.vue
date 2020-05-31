@@ -6,12 +6,28 @@
         <td>
             <div class="media align-items-center">
                 <a href="#" class="avatar mr-3">
-                    <img
-                        :src="'/img/upload/' + filename"
-                        :alt="description"
-                    />
+                    <img :src="'/img/upload/' + filename" :alt="description" />
                 </a>
-                <div class="media-body">
+                <div v-if="user.id == owner">
+                    <div
+                        v-if="!editing"
+                        @dblclick="editProject"
+                        class="media-body"
+                    >
+                        <span class="mb-0 text-sm">{{ title }}</span>
+                    </div>
+                    <input
+                        v-if="editing"
+                        class="form-control"
+                        type="text"
+                        v-model="title"
+                        @blur="doneEdit"
+                        @keyup.enter="doneEdit"
+                        @keyup.esc="cancelEdit"
+                        v-focus
+                    />
+                </div>
+                <div v-else class="media-body">
                     <span class="mb-0 text-sm">{{ title }}</span>
                 </div>
             </div>
@@ -104,7 +120,7 @@ export default {
             description: this.project.description,
             filename: this.project.filename,
             category: this.project.category_id,
-            editing: this.project.editing,
+            editing: false,
             score: this.project.score,
             wins: this.project.wins,
             losses: this.project.losses,
@@ -134,6 +150,34 @@ export default {
     },
 
     methods: {
+        editProject() {
+            this.beforeEditCache = this.title;
+            this.editing = true;
+        },
+        doneEdit() {
+            if (this.title.trim() == "") {
+                this.title = this.beforeEditCache;
+            }
+            this.editing = false;
+
+            this.$store.dispatch("projects/updateProject", {
+                id: this.id,
+                owner: this.owner,
+                title: this.title,
+                description: this.description,
+                filename: this.filename,
+                category: this.category,
+                editing: this.editing,
+                score: this.score,
+                wins: this.wins,
+                losses: this.losses,
+                rank: this.rank
+            });
+        },
+        cancelEdit() {
+            this.title = this.beforeEditCache;
+            this.editing = false;
+        },
         removeProject(id) {
             this.$store.dispatch("projects/deleteProject", id);
         },

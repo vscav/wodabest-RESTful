@@ -22,6 +22,8 @@
   "losses": "Losses",
   "wins": "Wins",
   "editing": "Editable",
+  "green_badge": "A green badge? The image is yours and is therefore editable. Double-click on its title or its description to modify them!",
+  "belongs": "The image is yours! Double-click on its title or its description to modify them.",
   "a_family": "A big family",
   "add": "Add a project",
   "today": "today",

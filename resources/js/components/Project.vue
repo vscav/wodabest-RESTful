@@ -8,10 +8,19 @@
                 :alt="project.description"
                 class="img-fluid"
             />
+            <div v-if="user.id == owner" class="top-inner-shadow">
+                <div class="editable">
+                    <span class="badge badge-dot">
+                        <i class="bg-success"></i>
+                    </span>
+                </div>
+            </div>
             <div class="overlay-work bg-dark"></div>
             <div class="icons text-center">
                 <a @click="goTodetail(id)" class="btn btn-icon"
-                    ><img src="img/icons/magnifying-glass.svg" alt="Magnifying glass icon"
+                    ><img
+                        src="img/icons/magnifying-glass.svg"
+                        alt="Magnifying glass icon"
                 /></a>
             </div>
             <div class="content p-3">
@@ -47,14 +56,18 @@
                     @click="removeProject(project.id)"
                     class="d-inline-flex mt-3 text-left"
                 >
-                    <a class="btn btn-icon"><img src="img/icons/trash.svg" alt="Trash icon" /></a>
+                    <a class="btn btn-icon"
+                        ><img src="img/icons/trash.svg" alt="Trash icon"
+                    /></a>
                 </div>
                 <div class="d-inline-flex mt-3 text-left align-items-center">
                     <a
                         v-if="isLiked"
                         @click="unlikeProject"
                         class="btn btn-icon"
-                        ><img src="img/icons/thumb-up-full.svg" alt="Full thumb up icon"
+                        ><img
+                            src="img/icons/thumb-up-full.svg"
+                            alt="Full thumb up icon"
                     /></a>
                     <a v-else @click="likeProject" class="btn btn-icon"
                         ><img src="img/icons/thumb-up.svg" alt="Thumb up icon"
