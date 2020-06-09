@@ -68,7 +68,7 @@ To setting up the project locally and get a local copy up and running, follow th
 
 1. Clone the repository
 ```sh
-git clone https://github.com/N0Ls/Wodabest-REST.git
+git clone https://github.com/vscav/wodabest-RESTful.git
 ```
 2. Create a .env file to set your connection details
 ```sh
