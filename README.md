@@ -26,7 +26,6 @@
     * [Socialite](#socialite)
     * [API routes](#api-routes)
 * [License](#license)
-* [Contributors](#contributors)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -135,15 +134,3 @@ For more details, see the full documentation in `doc/api-documentation`.
 ## License
 
 Distributed under the MIT License.
-
-## Contributors
-
-Nils LANDRODIE - Backend Developper - nilsland31@gmail.com
-
-Mattéo POPOFF - Backend Developper - pmatteo98@gmail.com
-
-Cloé QUIRIN - Frontend Developer - cloequirin3@gmail.com
-
-Léa ROSTOKER - Webdesigner - lea.rostoker.12@gmail.com
-
-Vincent SCAVINNER - Frontend Developer - vscavinner@gmail.com
